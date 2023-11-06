@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="icon" href="/static/images/fevicon.png" type="image/gif">
+</head>
+<body class="main-layout">
+    <div class="wrapper">
+        <!-- Header -->
+        <header>
+         <div class="head_top">
+             <div class="header">
+                 <div class="container-fluid">
+                     <div class="row">
+                         <div class="col-md-3 logo_section">
+                             <div class="full">
+                                 <div class="center-desk">
+                                     <div class="logo">
+                                         <a href="/"><img src="/static/images/logo.png" style="width:200px;" alt="#"></a>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                         <div class="col-md-9">
+                             <div class="right_header_info">
+                                 <ul>
+                                 </ul>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+         </header>
+        <!-- End Header -->
+
+        <!-- 회원가입 폼 -->
+
+        {%with messages = get_flashed_messages()%}
+        {%if messages %}
+          <script type="text/javascript">
+            alert("{{messages[-1]}}");
+          </script>
+          {%endif%}
+        {%endwith%}
+
+        <div id="contact" class="reqeste">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="titlepage">
+                        <h2>Registration</h2>
+                        <span></span>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-6 offset-md-3">
+                     <form action="/register" method="post" class="form_main" id="cochang">
+                        <div class="row">
+                           <div class="address">Be our member</div>
+                           <div class="col-md-12">
+                              <input class="form_control" placeholder="ID" type="text" name="id" id="id">
+                           </div>
+                           <div class="col-md-12">
+                              <input class="form_control" placeholder="Password" type="password" name="pw" id="pw">
+                           </div>
+                           <div class="col-md-12">
+                              <input class="form_control" placeholder="Contirm Password" type="password" name="confirm_pw" id="confirm_pw">
+                           </div>
+                           <div class="col-md-12">
+                              <button class="send_btn">Send</button>
+                           </div>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>      
+
+        <!-- Footer -->
+        <footer>
+         <div class="footer">
+            <div class="container">
+               <div class="row">
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                     <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                           <div class="address">
+                              <h3>Links</h3>
+                              <ul class="Menu_footer">
+                                 <li class="active"> <a href="/">Main</a> </li>
+                                 <li><a href="/game1">Slot machine</a> </li>
+                                 <li><a href="/game2">Odd/Even</a> </li>
+                                 <li><a href="/game3">Roullette</a> </li>
+                                 <li><a href="/game4">Dice Rolling</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                           <div class="address">
+                              <h3>About us</h3>
+                              <ul class="Links_footer">
+                                 <li>it3rNull<br>v1rt<br>je1att0<br>teddyyeo<br>Mota</li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="copyright">
+               <div class="container">
+                  <p>Copyright 2023 Korea Univ. Software Security - Momoland</p>
+               </div>
+            </div>
+         </div>
+      </footer>
+         <!-- end footer -->
+      </div>
+      <div class="overlay"></div>
+      <!-- Javascript files-->
+      <script src="/static/js/jquery.min.js"></script>
+      <script src="/static/js/popper.min.js"></script>
+      <script src="/static/js/bootstrap.bundle.min.js"></script>
+      <script src="/static/js/jquery-3.0.0.min.js"></script>
+      <!-- sidebar -->
+      <script src="/static/js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+       <script src="/static/js/custom.js"></script>
+      <script type="text/javascript">
+         $(document).ready(function() {
+             $("#sidebar").mCustomScrollbar({
+                 theme: "minimal"
+             });
+         
+             $('#dismiss, .overlay').on('click', function() {
+                 $('#sidebar').removeClass('active');
+                 $('.overlay').removeClass('active');
+             });
+         
+             $('#sidebarCollapse').on('click', function() {
+                 $('#sidebar').addClass('active');
+                 $('.overlay').addClass('active');
+                 $('.collapse.in').toggleClass('in');
+                 $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+             });
+         });
+      </script>
+      <script>
+         $(document).ready(function() {
+             $(".fancybox").fancybox({
+                 openEffect: "none",
+                 closeEffect: "none"
+             });
+         
+             $(".zoom").hover(function() {
+         
+                 $(this).addClass('transition');
+             }, function() {
+         
+                 $(this).removeClass('transition');
+             });
+         });
+      </script>
+     
+   </body>
+</html>
+
