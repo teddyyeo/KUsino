@@ -1,0 +1,22 @@
+span {
+    font-size: 150px;
+    color: #f5d441;
+    display: inline; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  
+  .dice-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  body {
+    background-color: #000000;
+  }
+  
+  

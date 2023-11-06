@@ -1,0 +1,36 @@
+.number-container {
+  display: flex;
+  justify-content: center;
+}
+
+.number {
+  width: 100px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.number:last-child {
+  margin-right: 0;
+}
+
+span {
+  font-size :50px;
+  color: #f5d441;
+  display: inline; 
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.text-container {
+  display: flex;
+  justify-content: center;
+}
+
+
+body {
+  background-color: #000000;
+}

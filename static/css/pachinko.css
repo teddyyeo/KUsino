@@ -1,0 +1,31 @@
+.number-container {
+    display: flex;
+  }
+  
+  .number {
+    width: 100px;
+    text-align: center;
+    white-space: nowrap;
+  }
+  
+  .number:last-child {
+    margin-right: 0;
+  }
+  
+  span {
+    width: 40px;
+    text-align: center;
+    white-space: nowrap;
+    font-size :40px;
+    color: #f5d441;
+    display: inline; 
+    border: 1px solid #f5d441;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  body {
+    background-color: #000000;
+  }
