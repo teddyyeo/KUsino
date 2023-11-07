@@ -256,11 +256,6 @@ def get():
     session.pop('balance', None)
     return redirect('/')
 
-@app.errorhandler(404)
-def not_found(error):
-    flash("404 not found")
-    return redirect("/")
-
 @app.errorhandler(500)
 def internal_server_error(e):
     flash("500 internal server error.. Please enter valid input")
