@@ -39,6 +39,9 @@ git clone https://github.com/teddyyeo/KUsino
 # Build Docker Image
 
 ```bash
+# Go to the KUsino directory
+cd KUsino
+
 docker build -t myimage:latest .
 ```
 
