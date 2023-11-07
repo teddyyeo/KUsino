@@ -49,5 +49,6 @@ docker build -t myimage:latest .
 # Run Docker Image
 
 ```bash
-sudo docker run -p 80:80 myiamge:latest
+sudo docker run --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -p 80:80 myiamge:latest
+sudo docker run --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -it myimage:latest /bin/bash
 ```
