@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "sql/sqlite3.h"
+#include "sql/sqlite3.c"
 
 // 사용자가 이미 존재하는지 확인하는 함수
 int isUserExists(sqlite3* db, char* id) {
