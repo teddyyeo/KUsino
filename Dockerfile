@@ -31,9 +31,9 @@ WORKDIR /app/KUsino
 #RUN pip3 install --trusted-host=pypi.org --trusted-host=files.pythonhosted.org flask
 RUN python3 -m pip install --trusted-host pypi.python.org --trusted-host files.pythonhosted.org --trusted-host pypi.org --upgrade pip
 RUN python3 -m pip install --trusted-host pypi.python.org --trusted-host files.pythonhosted.org --trusted-host pypi.org flask
-
+RUN make 
 # Make port 80 available to the world outside this container
-EXPOSE 80
+EXPOSE 5000
 
 # Define environment variables
 ENV FLASK_APP=app.py
