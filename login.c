@@ -68,8 +68,8 @@ int findUser(sqlite3* db, char* id, char* pw) {
         printf("Success\n");
         char tmp[50];
         char tmp2[50];
-        strcpy(tmp, sqlite3_column_text(stmt, 0));
-        strcpy(tmp2, sqlite3_column_text(stmt, 2));
+        strcpy(tmp, sqlite3_column_text((const char *)stmt, 0));
+        strcpy(tmp2, sqlite3_column_text((const char *)stmt, 2));
         printf("%s\n",tmp);
         printf("%s\n",tmp2);
         return 1;
