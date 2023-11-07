@@ -19,7 +19,6 @@ int main() {
     uint64_t min = 100000000;
     uint64_t max = 1000000000; 
 
-    // 범위 내의 난수 생성
     random_number = min + (rand() % (max - min + 1));
 
 
