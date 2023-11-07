@@ -49,5 +49,5 @@ docker build -t myimage:latest .
 # Run Docker Image
 
 ```bash
-docker run -p 80:80 myiamge:latest
+sudo docker run -p 80:80 myiamge:latest
 ```
