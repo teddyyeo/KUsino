@@ -3,6 +3,7 @@ import sqlite3
 import subprocess
 import hashlib
 import base64
+from pwn import *
 import os
 from Module import *
 
@@ -96,7 +97,7 @@ def game2():
 
         edit_balance(session,-1)
         res = execute('./games/game2',[],input)
-
+        print(input,res)
         coin_num = 0
         flag = False
         coin_num = res[0]
@@ -260,6 +261,7 @@ def get():
 def internal_server_error(e):
     flash("500 internal server error.. Please enter valid input")
     return redirect(request.referrer)
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',port=5002)
