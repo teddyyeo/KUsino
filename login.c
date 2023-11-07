@@ -1,9 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "sql/sqlite3.h"
-#include "sql/sqlite3.c"
 
-// 사용자가 이미 존재하는지 확인하는 함수
 int isUserExists(sqlite3* db, char* id) {
     sqlite3_stmt* stmt;
     char selectSQL[200];
@@ -46,7 +44,6 @@ int registerUser(sqlite3* db, char* id, char* pw) {
     return 1;
 }
 
-// 사용자를 검색하는 함수
 int findUser(sqlite3* db, char* id, char* pw) {
     sqlite3_stmt* stmt;
     char searchSQL[500];
@@ -68,8 +65,8 @@ int findUser(sqlite3* db, char* id, char* pw) {
         printf("Success\n");
         char tmp[50];
         char tmp2[50];
-        strcpy(tmp, sqlite3_column_text((const char *)stmt, 0));
-        strcpy(tmp2, sqlite3_column_text((const char *)stmt, 2));
+        strcpy(tmp, sqlite3_column_text(stmt, 0));
+        strcpy(tmp2, sqlite3_column_text(stmt, 2));
         printf("%s\n",tmp);
         printf("%s\n",tmp2);
         return 1;
