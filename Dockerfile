@@ -36,7 +36,7 @@ RUN	gcc -z execstack -fno-stack-protector -z norelro -g -O0 ./games/game2.c -o .
 RUN	gcc -z execstack -fno-stack-protector -z norelro -g -O0 ./games/game3.c -o ./games/game3
 RUN	gcc -z execstack -fno-stack-protector -z norelro -g -O0 ./games/game4.c -o ./games/game4
 RUN apt-get install libsqlite3-dev
-RUN	gcc -lsqlite3  -I/sql/sqlite3.h -I/sql/sqlite3.c ./login.c -o ./login
+RUN	gcc -lsqlite3 ./login.c -o ./login
 RUN	gcc ./board.c -o ./board
 # Make port 80 available to the world outside this container
 EXPOSE 5000
