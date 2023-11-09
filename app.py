@@ -3,7 +3,6 @@ import sqlite3
 import subprocess
 import hashlib
 import base64
-from pwn import *
 import os
 from Module import *
 
