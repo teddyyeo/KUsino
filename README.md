@@ -49,6 +49,15 @@ docker build -t myimage:latest .
 # Run Docker Image
 
 ```bash
-sudo docker run --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -p 5002:5002 myiamge:latest
+# Run program immediately
+sudo docker run --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -p 5000:5000 myiamge:latest
+
+# Access the container shell
 sudo docker run --cap-add=SYS_PTRACE --security-opt seccomp=unconfined -it myimage:latest /bin/bash
+```
+
+# Access the website
+
+```bash
+# access to the website with 127.0.0.1:5000
 ```
