@@ -129,6 +129,10 @@ def game3():
             flash("Bet amount more than zero")
             return redirect('/game3')
 
+        if int(money) > session['balance']:
+            flash("Bet amount more than balance")
+            return redirect('/game3')
+
         if int(target) not in [1,3,5,10,20]:
             flash("Target value must be 1,3,5,10,20")
             return redirect('/game3')
