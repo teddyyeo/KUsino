@@ -48,7 +48,7 @@ int findUser(sqlite3* db, char* id, char* pw) {
     sqlite3_stmt* stmt;
     char searchSQL[500];
     //printf("%s", id);
-    sprintf(searchSQL, "SELECT * FROM USERS WHERE id='%s' and pw='%s';", id, pw);
+    snprintf(searchSQL, "SELECT * FROM USERS WHERE id='%s' and pw='%s';", id, pw,500);
     char* errMsg = 0;
     //printf("%s\n", searchSQL);
 
