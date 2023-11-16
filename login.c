@@ -5,7 +5,7 @@
 int isUserExists(sqlite3* db, char* id) {
     sqlite3_stmt* stmt;
     char selectSQL[200];
-    sprintf(selectSQL, "SELECT * FROM USERS WHERE id = '%s'", id);
+    snprintf(selectSQL, "SELECT * FROM USERS WHERE id = '%s'", id,200);
     int rc = sqlite3_prepare_v2(db, selectSQL, -1, &stmt, 0);
     
     if (rc != SQLITE_OK) {
@@ -33,7 +33,7 @@ int registerUser(sqlite3* db, char* id, char* pw) {
 
     char* errMsg = 0;
     char insertSQL[500];
-    sprintf(insertSQL, "INSERT INTO USERS (id, pw, balance) VALUES ('%s', '%s', 100);", id, pw);
+    snprintf(insertSQL, "INSERT INTO USERS (id, pw, balance) VALUES ('%s', '%s', 100);", id, pw,500);
     
     int rc = sqlite3_exec(db, insertSQL, 0, 0, &errMsg);
     if (rc != SQLITE_OK) {
