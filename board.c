@@ -21,6 +21,12 @@ int main(int argc, char *argv[]){
 
     if (option == 1) {//read
         FILE *fp = fopen(title, "r");
+
+        if (fp == NULL){
+            printf("File acces error");
+            return 1;
+        }
+
         struct stat st;
         if (access(title, 0) != 0){
             printf("No File Exists!\n");
@@ -42,11 +48,16 @@ int main(int argc, char *argv[]){
         return 0;
     }
     if (option == 2) {
+        FILE *fp = fopen(title, "w");
+        if (fp == NULL){
+            printf("File acces error");
+            return 1;
+        }
+
         if (access(title, 0) == 0){
             printf("File Already Exits!\n");
             return 1;
         }
-        FILE *fp = fopen(title, "w");
 
         fwrite(content, cont_len, 1, fp);
 
