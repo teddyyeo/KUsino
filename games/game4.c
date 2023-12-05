@@ -27,7 +27,7 @@ int main(void)
     printf("Guess dice1 + dice2: ");
 
     gets(input);
-    strcpy(predict, input);
+    strncpy(predict, input,sizeof(predict));
 
     if (atoi(predict) == sum)
     {
