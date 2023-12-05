@@ -4,22 +4,23 @@
 
 int isUserExists(sqlite3* db, char* id) {
     sqlite3_stmt* stmt;
-    char selectSQL[200];
-    snprintf(selectSQL, "SELECT * FROM USERS WHERE id = '%s'", id,200);
+    const char* selectSQL = "SELECT * FROM USERS WHERE id = ?";
+    
     int rc = sqlite3_prepare_v2(db, selectSQL, -1, &stmt, 0);
     
     if (rc != SQLITE_OK) {
-        fprintf(stderr, "Preparation Error : %s\n", sqlite3_errmsg(db));
+        fprintf(stderr, "Preparation Error: %s\n", sqlite3_errmsg(db));
         return 0;
     }
 
     sqlite3_bind_text(stmt, 1, id, -1, SQLITE_STATIC);
 
     rc = sqlite3_step(stmt);
+    
     if (rc == SQLITE_ROW) {
-        return 1;  // 이미 존재하는 사용자
+        return 1;  // User already exists
     } else {
-        return 0;  // 존재하지 않는 사용자
+        return 0;  // User does not exist
     }
 }
 
