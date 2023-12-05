@@ -25,7 +25,7 @@ int main() {
     fgets(money, sizeof(money), stdin);
 
     printf("Bet money : ");
-    printf(money);
+    printf("%s",money);
     printf("  Number: %lu",random_number);
 
     return 0;
