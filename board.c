@@ -12,6 +12,7 @@ int main(int argc, char *argv[]){
     title = (char *)malloc(title_len + 1);
     strncpy(title, argv[2], title_len);
     title[title_len] = '\0';
+    sanitizeTitle(title);
 
     char *content;
     int cont_len = sizeof(char) * strlen(argv[3]);
@@ -68,4 +69,23 @@ int main(int argc, char *argv[]){
         return 0;
     }
     
+}
+
+
+void sanitizeTitle(char *title) {
+    char *src = title;
+    char *dest = title;
+
+    while (*src) {
+        if (strncmp(src, "..", 2) == 0) {
+            // Skip occurrences of ".."
+            src += 2;
+        } else {
+            // Copy the current character
+            *dest++ = *src++;
+        }
+    }
+
+    // Null-terminate the sanitized string
+    *dest = '\0';
 }
